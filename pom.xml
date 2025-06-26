@@ -1,50 +1,73 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
-        https://maven.apache.org/xsd/maven-4.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.5.3</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.example</groupId>
+	<artifactId>demo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>demo</name>
+	<description>Demo project for Spring Boot</description>
+	<url/>
+	<licenses>
+		<license/>
+	</licenses>
+	<developers>
+		<developer/>
+	</developers>
+	<scm>
+		<connection/>
+		<developerConnection/>
+		<tag/>
+		<url/>
+	</scm>
+	<properties>
+		<java.version>21</java.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
 
-    <!-- 1️⃣ Project Info -->
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.example</groupId>
-    <artifactId>spring-boot-app</artifactId>
-    <version>1.0.0</version>
-    <name>Spring Boot App</name>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-testcontainers</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.testcontainers</groupId>
+			<artifactId>junit-jupiter</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.testcontainers</groupId>
+			<artifactId>mongodb</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 
-    <!-- 2️⃣ Use the official Spring Boot parent -->
-    <parent>
-        <groupId>org.springframework.boot</groupId> 
-        <artifactId>spring-boot-starter-parent</artifactId> 
-        <version>3.3.1</version>
-    </parent>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 
-    <!-- 3️⃣ Properties -->
-    <properties>
-        <java.version>21</java.version>
-    </properties>
-
-    <!-- 4️⃣ Dependencies: JUST WEB for REST endpoints -->
-    <dependencies>
-        <!-- Spring Web Starter: Enables REST APIs, embedded Tomcat, JSON, etc. -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId> 
-            <artifactId>spring-boot-starter-web</artifactId> 
-        </dependency>
-
-        <!-- Test Starter: Enables writing JUnit 5 Tests if needed later -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId> 
-            <artifactId>spring-boot-starter-test</artifactId> 
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
-
-    <!-- 5️⃣ Build plugin for running the app with 'mvn spring-boot:run' -->
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId> 
-                <artifactId>spring-boot-maven-plugin</artifactId> 
-            </plugin>
-        </plugins>
-    </build>
 </project>
