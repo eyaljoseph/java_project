@@ -14,4 +14,19 @@ public class NumberGeneratorController {
         System.out.println("Generated number: " + randomNumber);
         return randomNumber;
     }
+
+    @GetMapping("/health")
+    public String healthCheck() {
+        return "OK";
+    }
+    
+    @GetMapping("/get_avg")
+    public int getAvg() {
+        int sum = 0;
+        for (int i = 0; i < 10; i++) {
+            int randomNumber = numberGenerator.generateRandomNumber();
+            sum += randomNumber;
+        }
+        return sum / 10;
+    }
 }
