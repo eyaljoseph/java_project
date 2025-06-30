@@ -2,6 +2,7 @@ package com.example.demo;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import java.util.List;
 
 @RestController
 public class NumberGeneratorController {
@@ -28,5 +29,11 @@ public class NumberGeneratorController {
             sum += randomNumber;
         }
         return sum / 10;
+    }
+
+    @GetMapping("/mongo_example")
+    public List<String> mongoExample() {
+        MongoExample mongoExample = new MongoExample();
+        return mongoExample.insertAndListUsers();
     }
 }
